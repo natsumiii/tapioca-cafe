@@ -1,0 +1,338 @@
+/* cssリセット ブラウザのデフォルトcssを打ち消す */
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth; /* ページ内リンクをクリックした時に、なめらかなスクロールを使って移動させる Safariは未対応、Edgeはver.76から対応 */
+  font-size: 16px; /* 基準となるフォントサイズ これが1remとなる*/
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h2 {
+  font-size: 2.5rem;
+}
+
+/* ヘッダー */
+.header {
+  background-color: #d37c97;
+  border-bottom: thin solid #fff;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  height: 70px;
+  box-sizing: border-box;
+}
+/* ロゴ */
+.home {
+  padding: 8px 16px;
+  width: 192px;
+  box-sizing: border-box;
+}
+.home img {
+  height: 100%;
+  transition: all 0.5s ease 0s; /*要素の2つの状態間の変化を定義する,この場合、.home img から .home img:hoverへの変化*/
+}
+.home img:hover {
+  opacity: 0.85;
+}
+
+/* ナビゲーション */
+.nav {
+  padding: 0 16px;
+}
+.nav ul {
+  display: flex;
+  list-style: none;
+}
+.nav li {
+  line-height: 100%;
+}
+.nav li a {
+  text-decoration: none;
+  padding: 0 32px;
+  line-height: 70px;
+  display: block;
+  transition: all 0.5s ease 0s;
+  color: #fff;
+}
+.nav li a:visited {
+  color: #fff;
+}
+.nav li a:hover {
+  background-color: #fff;
+  color: #d37c97;
+}
+.nav li a:active {
+  background-color: #fff;
+  color: #d37c97;
+}
+
+/* メインコンテンツ */
+.content {
+  position: relative;
+}
+
+/* カバー画像 */
+.cover {
+  background-color: #d37c97;
+  width: 100vw;
+  height: calc(100vh - 70px); /* ブラウザの縦幅からヘッダー分の高さを引いてブラウザの高さぴったりにしている */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cover img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* ニュース */
+.news {
+  max-width: 960px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 32px 16px;
+  box-sizing: border-box;
+}
+.news h2 {
+  color: #d37c97;
+  border-bottom: #d37c97 solid 2px;
+}
+.news ul {
+  padding: 16px 0;
+}
+.news li {
+  list-style-type: none;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.news a {
+  color: #d37c97;
+}
+.news a:hover {
+  opacity: 0.5;
+}
+.news a:visited {
+  color: #7e4b5b;
+}
+.date {
+  background-color: #d37c97;
+  color: #fff;
+  padding: 4px 8px;
+  margin-right: 8px;
+}
+.readmore {
+  text-align: right;
+}
+.readmore a {
+  background-color: #d37c97;
+  color: #fff;
+  line-height: 2;
+  padding: 4px 8px;
+  text-decoration: none;
+}
+.readmore a :hover {
+  opacity: 0.5;
+}
+
+/* コンセプト */
+.concept {
+  background: url("img/concept.png") no-repeat;
+  width: 100vw;
+  height: 800px;
+  background-size: cover;
+  text-align: center;
+}
+.concept h2 {
+  line-height: 3;
+  color: #fff;
+  font-size: 2.5rem;
+  padding: 0 16px;
+}
+.concept p {
+  color: #fff;
+  line-height: 2;
+  padding: 0 16px;
+}
+
+/* メニュー、ショップレイアウト */
+.menu,
+.shop {
+  padding: 32px 16px;
+  width: 85%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+.menu h2,
+.shop h2 {
+  color: #d37c97;
+  border-bottom: #d37c97 solid 2px;
+  text-align: center;
+}
+/* flexレイアウトの親となる要素 */
+.menu-container,
+.shop-container {
+  display: flex;
+  flex-wrap: wrap;
+  color: #c3b79d;
+  padding-top: 16px;
+}
+/* flexレイアウトの子となる要素 */
+.item {
+  width: 33.33333%; /* 3列に並べたいので、100%/3の幅を指定している */
+  padding: 16px;
+  box-sizing: border-box;
+}
+.item-img {
+  text-align: center;
+  padding-bottom: 16px;
+}
+.item-img img {
+  max-height: 240px;
+}
+.item-name {
+  font-weight: bold;
+  line-height: 2.5;
+}
+.item-name-en {
+  font-size: 0.85rem;
+}
+.item-desc {
+  padding: 16px 0;
+  font-size: 0.85rem;
+}
+.price {
+  font-weight: bold;
+  padding: 0 8px;
+}
+
+.shop-map {
+  text-align: center;
+  padding-bottom: 16px;
+}
+.shop-map img {
+  max-width: 100%;
+  background-color: #d37c97;
+}
+.shop-name {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.shop-address {
+  font-size: 0.85rem;
+}
+
+/* トップへ戻るボタン */
+.totop {
+  padding: 16px;
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+}
+.totop a {
+  display: block;
+  width: 60px;
+  height: 60px;
+  box-sizing: border-box;
+  line-height: 60px;
+  background-color: #d37c97;
+  color: #fff;
+  border-radius: 3px;
+  transition: all 0.5s ease 0s;
+  text-align: center;
+  border: thin solid #dfff;
+  text-decoration: none;
+}
+.totop a:hover {
+  background-color: #fff;
+  color: #d37c97;
+  border: thin solid #d37c97;
+}
+
+/* フッター */
+.footer {
+  background-color: #d37c97;
+  color: #fff;
+}
+.info-container {
+  width: 85%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.info {
+  padding: 32px;
+  width: 60%;
+  box-sizing: border-box;
+}
+.company {
+  padding-bottom: 8px;
+}
+.contact-btn {
+  padding: 16px 0;
+}
+.contact-btn a {
+  border: thin solid #d37c97;
+  color: #d37c97;
+  background-color: #fff;
+  padding: 8px 24px;
+  border-radius: 3px;
+  transition: all 0.5s ease 0s;
+  text-decoration: none;
+}
+.contact-btn a:hover {
+  background-color: #d37c97;
+  color: #fff;
+  border: thin solid #fff;
+}
+/* フッターのSNSボタン */
+.sns {
+  padding: 32px;
+  width: 40%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+}
+.instagram,
+.twitter {
+  width: 30px;
+  height: 30px;
+  padding: 8px;
+  border-radius: 3px;
+  transition: all 0.5s ease 0s;
+}
+.twitter {
+  margin-left: 8px;
+}
+.instagram:hover,
+.twitter:hover {
+  border-radius: 3px;
+  background-color: #d6a6b5;
+}
+
+/* 著作権表示 */
+.copylight {
+  width: 100%;
+  text-align: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* レスポンシブ対応例 メニューを縦並びに */
+/* 元々子要素を33.33333%で3列に並べていたものを、100%にすることで1列になる */
+@media screen and (max-width: 680px) { /* 最大幅が680px以下の時に適用される */
+  .item {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
